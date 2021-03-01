@@ -1,0 +1,89 @@
+﻿@{
+    ViewData["Title"] = "Usuarios";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Usuarios</h1>
+
+<div class="row">
+    <div class="col title">
+        <h1>Listado de Usuarios del Sistema</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-6">
+        Mostrar
+        <select name="nDisplay">
+            <option value="10">10</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+            <option value="250">250</option>
+            <option value="500">500</option>
+        </select>
+        registros
+    </div>
+    <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+    </form>
+    <div id="lista" class="row">
+        <div class="col">
+            <div class="table-responsive">
+                <table it="taula" class="table table-striped table-bordered ">
+                    <thead>
+                        <tr>
+                            <th scope="col">
+                                ProductId
+                            </th>
+                            <th scope="col">
+                                Name
+                            </th>
+                            <th scope="col">
+                                Category
+                            </th>
+                            <th scope="col">
+                                Color
+                            </th>
+                            <th scope="col">
+                                UnitPrice
+                            </th>
+                            <th scope="col">
+                                AvailableQuantity
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="contentTable">
+                    </tbody>
+                </table>
+
+                <div class="row">
+                    <div class="col-9">
+                        Mostrando del 1 al 5 de un total de 5 registros
+                    </div>
+
+                    <nav aria-label="Navegación">
+                        <ul class="pagination">
+                            <li class="page-item"><a class="page-link" href="#">Anterior</a></li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">Siguiente</a></li>
+                        </ul>
+                    </nav>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-3">
+    <button type="button" class="btn btn-primary">Agregar un Usuario</button>
+</div>
+
+
+
+@section Usuarios{
+    <script>
+        UsuariosSetUp();
+    </script>
+}
+
